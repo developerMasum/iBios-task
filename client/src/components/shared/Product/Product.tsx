@@ -15,7 +15,7 @@ const Product = () => {
   ]);
   console.log(productsData);
 
-  if (isLoading) <Loader />;
+  if (isLoading) return <Loader />;
 
   return (
     <div className="">

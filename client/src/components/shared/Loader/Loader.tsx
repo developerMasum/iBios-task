@@ -1,14 +1,20 @@
-import { Loader2 } from "lucide-react";
+import React from "react";
+import GridLoader from "react-spinners/GridLoader";
 
-const Loader = () => {
+function Loader() {
   return (
-    <div className="flex justify-center items-center h-full min-h-screen">
-      <Loader2
-        className="h-8 w-8 animate-spin text-primary"
-        aria-label="Loading"
-      />
+    <div style={loaderStyle}>
+      <GridLoader color="#038c7b" size={50} />
     </div>
   );
+}
+
+const loaderStyle: React.CSSProperties = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "100vh",
+  width: "full",
 };
 
 export default Loader;
