@@ -1,12 +1,8 @@
-<!-- # https://ibios-server.vercel.app/  -->
-<!-- https://ibios-server.vercel.app/ -->
-# Let's create the README.md content as requested in a file.
 
-readme_content = """
 # E-Commerce WebApp
 
 ## Live Demo
-[Live Link to E-Commerce WebApp](https://your-live-app-link.com)
+[Live Link to E-Commerce WebApp](https://i-bios-client.vercel.app/)
 
 ## Table of Contents
 - [Overview](#overview)
