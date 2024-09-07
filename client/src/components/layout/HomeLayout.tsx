@@ -31,7 +31,7 @@ export function HomeLayout() {
   const pathname = location.pathname; // Extract the pathname
   const cart = useAppSelector((state) => state.cart);
 
-  const [scrolled, setScrolled] = useState<boolean>(false);
+  const [scrolled] = useState<boolean>(false);
   const [xOffset, setXOffset] = useState<number>(0);
 
   const menuItems = [

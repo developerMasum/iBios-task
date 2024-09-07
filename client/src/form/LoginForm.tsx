@@ -1,5 +1,4 @@
-
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -17,7 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
+
 import { PasswordInput } from "@/components/shared/PasswordInput/PasswordInput";
 import { Checkbox } from "@/components/ui/checkbox";
 
@@ -37,15 +36,14 @@ const formSchema = z.object({
 });
 
 const LoginForm = () => {
-   const [loading, setLoading] = useState(false);
+  //  const [loading, setLoading] = useState(false);
 
+  const [login, { isLoading }] = useLoginMutation();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from.pathname || "/";
 
-   const [login, { isLoading }] = useLoginMutation();
-   const navigate = useNavigate();
-   const location = useLocation();
-   const from = location.state?.from.pathname || "/";
-
-   const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -55,31 +53,28 @@ const LoginForm = () => {
     },
   });
 
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    try {
+      //  login(userInfo);
 
+      const res = await login(values).unwrap();
+      console.log(res);
 
- const onSubmit = async (values: z.infer<typeof formSchema>) => {
- 
-   try {
-     
-    //  login(userInfo);
+      const user = verifyToken(res.data.accessToken) as TUser;
+      dispatch(setUser({ user: user, token: res.data.accessToken }));
+      toast.success("Logged In successfully", { position: "bottom-left" });
 
-     const res = await login(values).unwrap();
-     console.log(res);
-
-     const user = verifyToken(res.data.accessToken) as TUser;
-     dispatch(setUser({ user: user, token: res.data.accessToken }));
-     toast.success("Logged In successfully", { position: "bottom-left" });
-  
-     if (user.role === "user") {
-       navigate(from, { replace: true });
-     } else {
-       navigate("/");
-     }
-   } catch (error) {
-     toast.error((error as any)?.data?.message || "An error occurred",{position:'bottom-left'});
-   }
- };
-
+      if (user.role === "user") {
+        navigate(from, { replace: true });
+      } else {
+        navigate("/");
+      }
+    } catch (error) {
+      toast.error((error as any)?.data?.message || "An error occurred", {
+        position: "bottom-left",
+      });
+    }
+  };
 
   return (
     <Form {...form}>

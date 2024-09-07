@@ -1,6 +1,5 @@
 import assets from "@/assets";
 import { Separator } from "@/components/ui/separator";
-import { Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
   const resources = [
@@ -17,7 +16,6 @@ const Footer = () => {
     { title: "Starlight", link: "https://linkedin.com" },
     { title: "Robot Platform", link: "https://facebook.com" },
     { title: "EEVE Roadmap", link: "https://dribbble.com" },
-  
   ];
 
   const company = [

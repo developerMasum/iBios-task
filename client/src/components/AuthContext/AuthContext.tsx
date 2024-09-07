@@ -1,5 +1,4 @@
-
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import React, {
   createContext,
@@ -8,7 +7,7 @@ import React, {
   useEffect,
   ReactNode,
 } from "react";
-import {jwtDecode} from "jwt-decode"; 
+import { jwtDecode } from "jwt-decode";
 import axiosInstance from "@/utils/axiosInstance";
 
 interface AuthContextType {
@@ -104,7 +103,3 @@ export const useAuth = () => {
   }
   return context;
 };
-
-
-
-

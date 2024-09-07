@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // import { useState } from "react";
 // import Loader from "@/components/shared/Loader/Loader";
 // import NoDataFound from "@/components/shared/NoDataFound/NoDataFound";
@@ -119,9 +121,9 @@ import { TQueryParam } from "@/types/global.type";
 import { useGetAllProductsQuery } from "@/redux/feature/product/productApi";
 
 const ProductCategory = () => {
-  const [params, setParams] = useState<TQueryParam[]>([]);
+  const [params] = useState<TQueryParam[]>([]);
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(6); // Default limit of products per page
+  const [limit] = useState(6); // Default limit of products per page
   const { category } = useParams<{ category: string }>();
   const navigate = useNavigate();
   const location = useLocation();
@@ -149,12 +151,6 @@ const ProductCategory = () => {
       setPage(newPage);
       updateURLParams("page", newPage.toString());
     }
-  };
-
-  const handleLimitChange = (newLimit: number) => {
-    setLimit(newLimit);
-    updateURLParams("limit", newLimit.toString());
-    setPage(1); // Reset to the first page when limit changes
   };
 
   if (isLoading) return <Loader />;
@@ -227,4 +223,3 @@ const ProductCategory = () => {
 };
 
 export default ProductCategory;
-

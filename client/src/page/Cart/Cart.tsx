@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MinusCircle, PlusCircle, X } from "lucide-react";
@@ -14,7 +16,7 @@ import {
 
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-import { useNavigate } from "react-router-dom";
+
 import {
   addToCart,
   clearCart,
@@ -24,7 +26,7 @@ import {
 import { formatMoney } from "@/utils/formatMoney";
 
 const ShoppingCart = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const cart = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
 
@@ -49,12 +51,6 @@ const ShoppingCart = () => {
     const discountAmount = (item.price * (item.discount || 0)) / 100;
     const finalPrice = (item.price - discountAmount) * item.cartQuantity;
     return sum + finalPrice;
-  }, 0);
-
-  const totalSaved = cart.cartItems.reduce((sum, item) => {
-    const discountAmount = (item.price * (item.discount || 0)) / 100;
-    const savedAmount = discountAmount * item.cartQuantity;
-    return sum + savedAmount;
   }, 0);
 
   return (
@@ -140,7 +136,11 @@ const ShoppingCart = () => {
                 </TableBody>
               </Table>
               <div className="flex justify-end -mt-6">
-                <Button onClick={handleClearCart} variant="link" className={cn('text-red-500')}>
+                <Button
+                  onClick={handleClearCart}
+                  variant="link"
+                  className={cn("text-red-500")}
+                >
                   Clear Cart
                 </Button>
               </div>
