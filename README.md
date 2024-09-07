@@ -1,8 +1,9 @@
 
 # E-Commerce WebApp
+- E-commerce WebApp allows users to sign up, log in, browse products, and manage their shopping cart using React and Context API for state management. It showcases features like dynamic cart updates, authentication, and product listing.
 
 ## Live Demo
-[Live Link to E-Commerce WebApp](https://i-bios-client.vercel.app/)
+[Live Link ](https://i-bios-client.vercel.app/)
 
 ## Table of Contents
 - [Overview](#overview)
