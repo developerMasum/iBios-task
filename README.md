@@ -53,65 +53,38 @@ The focus of this implementation is to demonstrate state management using the Co
 ### Prerequisites
 - Node.js and npm installed on your machine.
 
-### Steps
-1. Clone the repository:
-   \`\`\`
-   git clone https://github.com/your-repo/ecommerce-webapp.git
-   \`\`\`
-2. Navigate to the project directory:
-   \`\`\`
-   cd ecommerce-webapp
-   \`\`\`
-3. Install the dependencies:
-   \`\`\`
-   npm install
-   \`\`\`
-4. Start the development server:
-   \`\`\`
-   npm start
-   \`\`\`
-5. Open your browser and navigate to `http://localhost:3000`.
+## Installation & Running Locally
 
-## Folder Structure
-\`\`\`
-ecommerce-webapp/
-│
-├── public/
-│   ├── index.html
-│   └── products.json   # Sample product data in JSON format
-│
-├── src/
-│   ├── components/
-│   │   ├── Auth/
-│   │   │   ├── Login.js     # Login component
-│   │   │   └── Signup.js    # Signup component
-│   │   ├── Cart/
-│   │   │   ├── Cart.js      # Shopping cart component
-│   │   └── Product/
-│   │       ├── ProductList.js   # Product listing component
-│   │       └── ProductItem.js   # Single product item component
-│   │
-│   ├── context/
-│   │   ├── AuthContext.js   # Context for authentication state
-│   │   └── CartContext.js   # Context for cart state
-│   │
-│   ├── App.js               # Main app component
-│   ├── index.js             # React DOM rendering entry point
-│   └── styles.css           # App-wide styling
-│
-└── package.json
-\`\`\`
+1. **Clone the repository:**
+   ```bash
+   git clone [[https://github.com/yourusername/ecommerce-data-visualization.git](https://github.com/developerMasum/iBios-task)]
+  
+```
+```bash
+   cd client
+npm install
+npm run dev
+```
+```bash
+   cd client
+npm install
+npm run dev
+```
+```bash
+   cd ../server
+npm install
 
-## Contributing
-Contributions are welcome! Please open a pull request to add new features or improve the existing codebase.
+```
+```bash
+  DATABASE_URL=mongodb+srv://db_user_read:password@cluster0.aaflc.mongodb.net/RQ_Analytics?retryWrites=true&w=majority&appName=Cluster0
+PORT=5000
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-"""
+```
+```bash
+   npm run start:dev
 
-# Save to README.md file
-file_path = "/mnt/data/README.md"
-with open(file_path, "w") as file:
-    file.write(readme_content)
+```
 
-file_path
+## 🔗 Visit My Profile Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://portfolio-masum-fullstack.vercel.app)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mdmasumdev)
