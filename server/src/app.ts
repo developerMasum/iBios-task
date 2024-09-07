@@ -15,18 +15,13 @@ const app: Application = express();
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(
-  cors({
-    origin: ['http://localhost:5173', 'https://heliverse-assesment.vercel.app'],
-    credentials: true,
-  }),
-);
+app.use(cors({origin:'http://localhost:5173',credentials:true}))
 
 // application routes
 app.use('/api', router);
 
 app.get('/', (req: Request, res: Response) => {
-  res.send(' Heliverse Task DB Connected !!');
+  res.send('FurniFlex server is running !');
 });
 
 app.use(globalErrorHandler);
